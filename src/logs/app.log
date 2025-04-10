@@ -1,0 +1,4 @@
+2025-04-10 11:30:29.377 | INFO     | model.model_service:load_model:15 - Checking a model exists config model file at model\models/rf_db_v1
+2025-04-10 11:30:29.419 | INFO     | model.model_service:load_model:31 - Model rf_db_v1 exists.!!loading configuration model file
+2025-04-10 11:30:29.674 | INFO     | model.model_service:predict:40 - Make Prediction
+2025-04-10 11:30:29.906 | INFO     | __main__:main:23 - Prediction :[2216.8427822]

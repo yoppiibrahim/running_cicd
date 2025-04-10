@@ -1,0 +1,23 @@
+[tool.poetry]
+package-mode = false
+name = "3-pydantic"
+version = "0.1.0"
+description = ""
+authors = ["yoppiibra <yoppiibra@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.3"
+scikit-learn = "1.5.1"
+pydantic = "^2.11.2"
+pydantic-settings = "^2.8.1"
+loguru = "^0.7.3"
+sqlalchemy = "^2.0.40"
+flake8 = "^7.2.0"
+wemake-python-styleguide = "^1.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
