@@ -1,11 +1,48 @@
-# Github actions workflows
+# # Github actions workflows
 
-name: App Workflows
+# name: App Workflows
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# permissions:
+#   contents: read
+
+# jobs:
+
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       name: Checkout Repository
+#       uses: actions/checkout@v4
+
+#       name: Set up Python 3.12.7
+#       uses: actions/setup-python@v5
+#       with: 
+#         python-version: '3.12.7'
+
+#       name: Install Poetry
+#       uses: snok/install-poetry@v1
+
+#       name: Install dependencies using poetry
+#       run: poetry run make install
+
+#       name: Lint with flake8
+#       run: poetry run make check
+
+
+# This is first Github Actions Workflow..!!
+
+name: App Workflow
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  pull_request: 
     branches: [ "main" ]
 
 permissions:
@@ -17,19 +54,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-      name: Set up Python 3.12.7
+    - name: Set up Python 3.12.7
       uses: actions/setup-python@v5
-      with: 
-        python-version: '3.12.7'
+      with:
+        python-version: "3.12.7"
 
-      name: Install Poetry
+    - name: Install Poetry
       uses: snok/install-poetry@v1
+    #   with:
+    #     virtualenvs-in-project: true
 
-      name: Install dependencies using poetry
+    # - name: Load cached venv
+    #   uses: actions/cache@v4
+    #   id: cached-poetry-dependencies
+    #   with: 
+    #     path: .venv
+    #     key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Install dependencies using poetry
+      # if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry run make install
 
-      name: Lint with flake8
+    - name: Lint with flake8
       run: poetry run make check
