@@ -18,19 +18,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Checkout Repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
-      name: Set up Python
+    - name: Set up Python
       uses: actions/setup-python@v5
       with: 
         python-version: '3.12.7'
 
-      name: Install Poetry
+    - name: Install Poetry
       uses: snok/install-poetry@v1
 
-      name: Install dependencies using poetry
+    - name: Install dependencies using poetry
       run: poetry run make install
 
-      name: Lint using flake8
+    - name: Lint using flake8
       run: poetry run make check
