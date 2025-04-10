@@ -2,7 +2,7 @@
 
 name: App Workflows
 
-om:
+on:
   push: 
     branches: [ "main "]
   pull_request:
